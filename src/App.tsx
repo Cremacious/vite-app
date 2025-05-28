@@ -1,18 +1,22 @@
 import './App.css';
 import { Routes, Route, Link } from 'react-router-dom';
-import Home from './pages/Home';
-import Activities from './pages/Activities';
+import Home from './Home';
+import BookList from './pages/BookList';
+import Book from './pages/Book';
 
 function App() {
   return (
     <>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/activities">Activities</Link>
+        <div className="flex flex-row space-x-6">
+          <Link to="/">Home</Link>
+          <Link to="/books">Books</Link>
+        </div>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/activities" element={<Activities />} />
+        <Route path="/books" element={<BookList />} />
+        <Route path="/books/:id" element={<Book />} />
       </Routes>
     </>
   );
